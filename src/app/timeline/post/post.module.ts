@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PostPage } from './post.page';
+import { CommentsComponent } from './comments/comments.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PostPage]
+  declarations: [PostPage, CommentsComponent]
 })
 export class PostPageModule {}

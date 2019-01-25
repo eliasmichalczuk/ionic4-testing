@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>post</ion-title>
+    <ion-title>{{post?.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-img [src]="post?.img"></ion-img>
+  <ion-card-content>
+    {{post?.description}}
+  </ion-card-content>
 </ion-content>

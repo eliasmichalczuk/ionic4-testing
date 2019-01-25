@@ -55,8 +55,9 @@ export class TimelinePage {
     });
   }
 
-  viewPost(postId) {
-    this._route.navigate(['post']);
+  viewPost(postId: number): void {
+    console.log(postId);
+    this._route.navigate([`/${postId}`]);
   }
 
 

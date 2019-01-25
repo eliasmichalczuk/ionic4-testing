@@ -18,12 +18,12 @@
         ion-focusable hydrated">
           Save
         </ion-button> -->
-          <ion-button>
-            <ion-icon slot="start" name="star" (click)="saveToStorage(post.id)"></ion-icon>
+          <ion-button (click)="saveToStorage(post.id)">
+            <ion-icon slot="start" name="star" ></ion-icon>
             Save
           </ion-button>
-          <ion-button>
-            <ion-icon slot="start" name="star" (click)="viewPost(post.id)"></ion-icon>
+          <ion-button (click)="viewPost(post.id)">
+            <ion-icon slot="start" name="star" ></ion-icon>
             View post
           </ion-button>
         </ion-card-content>

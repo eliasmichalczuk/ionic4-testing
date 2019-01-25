@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { TimelinePage } from './timeline.page';
 import { PostPage } from './post/post.page';
 import { PostPageModule } from './post/post.module';
+import { TimelineRoutingModule } from './timeline.router.module';
 
 @NgModule({
   imports: [
@@ -13,17 +14,19 @@ import { PostPageModule } from './post/post.module';
     CommonModule,
     FormsModule,
     PostPageModule,
-    RouterModule.forChild(
-      [
-        { path: '',
-        component: TimelinePage
-        },
-        { path: ':id',
-        component: PostPage
-        }
-      ]
-    )
+    TimelineRoutingModule
   ],
+  //   RouterModule.forChild(
+  //     [
+  //       { path: '',
+  //       component: TimelinePage
+  //       },
+  //       { path: ':postId',
+  //       component: PostPage
+  //       }
+  //     ]
+  //   )
+  // ],
   declarations: [TimelinePage]
 })
 export class TimelinePageModule {}
