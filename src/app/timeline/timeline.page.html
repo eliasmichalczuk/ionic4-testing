@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      tab
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let post of posts" class="welcome-card">
+        <ion-img [src]="post.img"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{post.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{post.description}}</p>
+        <!-- <ion-button class="button button-solid ion-activatable 
+        ion-focusable hydrated">
+          Save
+        </ion-button> -->
+          <ion-button>
+            <ion-icon slot="start" name="star" (click)="saveToStorage(post.id)"></ion-icon>
+            Save
+          </ion-button>
+          <ion-button>
+            <ion-icon slot="start" name="star" (click)="viewPost(post.id)"></ion-icon>
+            View post
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

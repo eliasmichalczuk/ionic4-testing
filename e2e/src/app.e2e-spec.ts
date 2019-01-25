@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { browser } from 'protractor';
 
 describe('new App', () => {
   let page: AppPage;
@@ -8,6 +9,7 @@ describe('new App', () => {
   });
 
   it('should display welcome message', () => {
+    browser.waitForAngularEnabled(false);
     page.navigateTo();
     expect(page.getPageTitle()).toContain('Tab One');
   });
