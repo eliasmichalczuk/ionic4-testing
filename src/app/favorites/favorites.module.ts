@@ -5,14 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PostPage } from './post.page';
-import { CommentsComponent } from './comments/comments.component';
-import { WriteComponent } from './comments/write/write.component';
+import { FavoritesPage } from './favorites.page';
 
 const routes: Routes = [
   {
-    path: ':postId',
-    component: PostPage
+    path: '',
+    component: FavoritesPage
   }
 ];
 
@@ -23,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PostPage, CommentsComponent, WriteComponent]
+  declarations: [FavoritesPage]
 })
-export class PostPageModule {}
+export class FavoritesPageModule {}

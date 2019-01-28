@@ -1,12 +1,15 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{post?.title}}</ion-title>
-  </ion-toolbar>
-</ion-header>
 
+<a [routerLink]="['/m']">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="arrow-dropleft"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+</a>
 <ion-content padding>
-  <ion-img [src]="post?.img"></ion-img>
+  <ion-img [src]="post.img"></ion-img>
   <ion-card-content>
+    <ion-card-title>{{post?.title}}</ion-card-title>
     {{post?.description}}
   </ion-card-content>
   <app-comments [post]=post></app-comments>

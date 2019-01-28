@@ -55,5 +55,10 @@
         "img" : "https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg",
         "title" : "ionic title"
       }
+    ],
+    "favorites" : [
+      {
+        "postIds": [1]
+      }
     ]
 }

@@ -31,18 +31,18 @@ export class TimelinePage {
 
   // tslint:disable-next-line:use-life-cycle-interface
   async ngOnInit(): Promise<void> {
-  // await this._service.getPosts()
-  //               .subscribe((posts: Array<Post>) => {
-  //                 this.posts = posts;
-  //                 console.log(posts);
-  //               }, err => {
-  //                 console.log(err.message);
-  //               });
+  await this._service.getPosts()
+                .subscribe((posts: Array<Post>) => {
+                  this.posts = posts;
+                  console.log(posts);
+                }, err => {
+                  console.log(err.message);
+                });
 
-   await this._service.getPostsFromObservable(ids)
-                      .subscribe((post: Post) => {
-                        this.posts.push(post);
-                      }, err => console.log(err));
+  //  await this._service.getPostsFromObservable(ids)
+  //                     .subscribe((post: Post) => {
+  //                       this.posts.push(post);
+  //                     }, err => console.log(err));
   }
 
   saveToStorage(postId) {
@@ -66,8 +66,7 @@ export class TimelinePage {
   }
 
   viewPost(postId: number): void {
-    console.log(postId);
-    this._route.navigate([`/${postId}`]);
+    this._route.navigate([`/m/timeline/${postId}`]);
   }
 
 

@@ -13,6 +13,7 @@ export class PostPage implements OnInit {
 
   postId: number;
   post: Post;
+  post$: Observable<Post>;
 
   constructor(
     private acRouse: ActivatedRoute,
@@ -22,11 +23,10 @@ export class PostPage implements OnInit {
 
     // tslint:disable-next-line:radix
     this.postId = parseInt(this.acRouse.snapshot.paramMap.get('postId'));
-    console.log('--->>', this.postId);
-
+    this.post$ = this.postService.getPost(this.postId);
     this.postService.getPost(this.postId).subscribe((post: Post) => {
       this.post = post;
-      console.log(post);
+      console.log('POST --->>', this.post);
     });
   }
 

@@ -14,7 +14,8 @@ import { TimelineRoutingModule } from './timeline.router.module';
     CommonModule,
     FormsModule,
     PostPageModule,
-    TimelineRoutingModule
+    TimelineRoutingModule,
+    RouterModule
   ],
   //   RouterModule.forChild(
   //     [

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Your favorites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card *ngFor="let post of favoritePosts" style="margin-top: 0px !important; padding-top: 0px !important; width: 100%">
+  <ion-card-content>
+    <ion-card-title (click)="viewPost(post.id)">
+      {{post.title}}
+    </ion-card-title>
+    <h3>by. {{post.authorName}}</h3>
+  </ion-card-content>
+</ion-card>

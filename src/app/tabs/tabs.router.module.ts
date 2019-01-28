@@ -4,33 +4,28 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'm',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        children: [
-          {
-            path: '',
-            loadChildren: '../timeline/timeline.module#TimelinePageModule'
-          }
-        ]
+        path: 'timeline',
+        loadChildren: '../timeline/timeline.module#TimelinePageModule'
       },
       {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
-          }
-        ]
+        path: 'favorites',
+        loadChildren: '../favorites/favorites.module#FavoritesPageModule'
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/m/timeline',
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/m/timeline',
+    pathMatch: 'full'
   }
 ];
 

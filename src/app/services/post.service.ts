@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, from, of } from 'rxjs';
 import { mergeMap, catchError } from 'rxjs/operators';
 import { Post } from '../models/Post.interface';
+import { FavoritePost } from '../models/FavoritePosts.interface';
 
 const API = 'http://localhost:3000/';
 
@@ -27,7 +28,14 @@ export class PostService {
     );
   }
 
-  getPost(postId: number = 1) {
+  getSlicedPostsFromObservable(ids: number[]): Observable<FavoritePost> {
+    return from(ids).pipe(
+      mergeMap(id => <Observable<FavoritePost>> this._http.get(API + `posts/` + id)
+      .pipe(catchError(() => of(undefined))))
+    );
+  }
+
+  getPost(postId: number) {
     return this._http.get<Post>(API + `posts/${postId}` + `?_embed=comments`);
   }
 }
