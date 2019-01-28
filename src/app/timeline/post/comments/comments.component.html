@@ -1,7 +1,6 @@
-<ion-content>
-  <ion-card>
+  <ion-card *ngFor="let comment of post?.comments">
     <ion-card-content>
-      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-subtitle>{{comment?.date}}</ion-card-subtitle>
+      <h4>{{comment?.message}}</h4>
     </ion-card-content>
   </ion-card>
-</ion-content>

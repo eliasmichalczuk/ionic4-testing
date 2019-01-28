@@ -5,4 +5,5 @@ export interface Post {
     description: string;
     img: string;
     title: string;
+    comments: Array<Comment>;
 }

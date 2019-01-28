@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let post of posts" class="welcome-card">
-        <ion-img [src]="post.img"></ion-img>
+    <ion-card *ngFor="let post of posts" class="welcome-card test-post">
+        <ion-img [src]="post.img" (click)="viewPost(post.id)"></ion-img>
         <ion-card-header>
           <ion-card-title>{{post.title}}</ion-card-title>
         </ion-card-header>
@@ -23,7 +23,6 @@
             Save
           </ion-button>
           <ion-button (click)="viewPost(post.id)">
-            <ion-icon slot="start" name="star" ></ion-icon>
             View post
           </ion-button>
         </ion-card-content>

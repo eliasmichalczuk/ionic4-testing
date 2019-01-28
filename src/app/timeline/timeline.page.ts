@@ -6,6 +6,12 @@ import { Post } from '../models/Post.interface';
 import { PostService } from '../services/post.service';
 import { Router } from '@angular/router';
 
+const ids = Observable.create(function(observer) {
+  observer.next(1);
+  observer.next(2);
+  observer.next(3);
+});
+
 @Component({
   selector: 'app-timeline',
   templateUrl: 'timeline.page.html',
@@ -25,14 +31,18 @@ export class TimelinePage {
 
   // tslint:disable-next-line:use-life-cycle-interface
   async ngOnInit(): Promise<void> {
-  await this._service.getPosts(1)
-                .subscribe((posts: Array<Post>) => {
-                  this.posts = posts;
-                  console.log(posts);
-                }, err => {
-                  console.log(err.message);
-                });
-                this.saveToStorage(1);
+  // await this._service.getPosts()
+  //               .subscribe((posts: Array<Post>) => {
+  //                 this.posts = posts;
+  //                 console.log(posts);
+  //               }, err => {
+  //                 console.log(err.message);
+  //               });
+
+   await this._service.getPostsFromObservable(ids)
+                      .subscribe((post: Post) => {
+                        this.posts.push(post);
+                      }, err => console.log(err));
   }
 
   saveToStorage(postId) {

@@ -18,13 +18,15 @@ export class PostPage implements OnInit {
     private acRouse: ActivatedRoute,
     private postService: PostService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
 
+    // tslint:disable-next-line:radix
     this.postId = parseInt(this.acRouse.snapshot.paramMap.get('postId'));
-    console.log('--->>' ,this.postId);
+    console.log('--->>', this.postId);
 
     this.postService.getPost(this.postId).subscribe((post: Post) => {
       this.post = post;
+      console.log(post);
     });
   }
 
