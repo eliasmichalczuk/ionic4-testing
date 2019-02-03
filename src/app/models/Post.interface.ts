@@ -1,3 +1,5 @@
+import { Comment } from '../models/Comment.interface';
+
 export interface Post {
     id: number;
     authorName: string;

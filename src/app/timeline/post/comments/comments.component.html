@@ -4,4 +4,4 @@
       <h4>{{comment?.message}}</h4>
     </ion-card-content>
   </ion-card>
-  <app-write></app-write>
+  <app-write [postId]="post.id" (event)="newComment()"></app-write>

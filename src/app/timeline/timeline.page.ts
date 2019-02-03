@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { Post } from '../models/Post.interface';
 import { PostService } from '../services/post.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 const ids = Observable.create(function(observer) {
   observer.next(1);
@@ -22,7 +23,8 @@ export class TimelinePage {
   constructor(private _service: PostService,
     public navCtrl: NavController,
     private _storage: Storage,
-    private _route: Router) {
+    private _route: Router,
+    private titleService: Title) {
   }
 
   var = TimelinePage;

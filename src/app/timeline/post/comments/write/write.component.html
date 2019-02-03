@@ -1,8 +1,10 @@
 <ion-content>
   <ion-card>
     <ion-item>
-      <ion-textarea placeholder="Write a comment!" clear-on-edit="true">
+      <ion-textarea #textValue placeholder="Write a comment!" clear-on-edit="true" style="height: 40px;"
+      [(value)]="test" (keyup)="onKey(textValue.value)">
       </ion-textarea>
+    <ion-button color="primary" (click)="postComment(textValue.value)">Post</ion-button>
     </ion-item>
   </ion-card>
 </ion-content>
